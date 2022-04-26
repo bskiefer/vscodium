@@ -9,15 +9,12 @@ on:
     branches: [ main ]
     
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-        - uses: actions/checkout@v3
-        - name: Checkout submodules
-          uses: textbook/git-checkout-submodule-action@master
   build:
     runs-on: "macOS-10.15"
     steps:
+        - uses: actions/checkout@v3
+          with:
+            submodules: recursive
         - name: Setup Node.js environment
           uses: actions/setup-node@v3
           with:
