@@ -21,4 +21,10 @@ jobs:
             node-version: 16
         - name: Build
           run: . build_macos_arm.sh
+        - name: Upload release
+          uses: yakuhzi/action-release@v1
+          with:
+            file: vscodium/VSCode-darwin-arm64/VSCodium.zip
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
