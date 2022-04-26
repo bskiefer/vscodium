@@ -25,7 +25,6 @@ if [[ "${tag_upstream}.darwin_arm64" != "${tag_fork}" ]]; then
   gh release create "${tag}" --notes "Added Darwin ARM64 binary for M1 Macs.
   Compiled on my M1 Macbook Air in just about 5 minutes 🥳"
   zip -r -X -y vscodium/VSCode-darwin-arm64/VSCodium.zip vscodium/VSCode-darwin-arm64/VSCodium.app -x "*.DS_Store"
-  gh release upload "${tag}" vscodium/VSCode-darwin-arm64/VSCodium.zip
 
   # code below does not work, don't know why yet
   #echo "### INSTALLING ###"
