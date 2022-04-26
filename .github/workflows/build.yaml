@@ -1,0 +1,14 @@
+name: macos_build
+
+jobs:
+  build:
+    runs-on: "macOS-10.15"
+  steps:
+      - uses: actions/checkout@v3]
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Build
+        run: . build_macos_arm.sh
+    
